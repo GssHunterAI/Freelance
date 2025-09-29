@@ -3,13 +3,14 @@ env:
   CI: false
   GITHUB_USERNAME: ${{ github.repository_owner }}
   REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is automatically set by Github Actions
-  USE_GITHUB_DATA: "true"
-  MEDIUM_USERNAME: "saadpasta" # Change this to your medium username
+  USE_GITHUB_DATA: "false" # Set to false to use static data since we may not have a custom token
+  MEDIUM_USERNAME: "" # No medium username configured
 on:
   workflow_dispatch:
   push:
     branches:
       - master
+      - copilot/fix-f44d4035-db56-400c-b1ae-ecb84eedbd94
   schedule:
     - cron: "0 12 * * 1" # see https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events
 jobs:

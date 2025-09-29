@@ -1,0 +1,21 @@
+[build]
+  # Directory to serve files from
+  publish = "build"
+  # Build command for the application
+  command = "npm run build"
+
+[build.environment]
+  # Node.js version to use during build
+  NODE_VERSION = "18"
+  # Set CI to false to allow warnings during build
+  CI = "false"
+  # Use static data instead of GitHub API to avoid authentication issues
+  USE_GITHUB_DATA = "false"
+  # Set GitHub username (can be overridden by environment variables in Netlify UI)
+  GITHUB_USERNAME = "GssHunterAI"
+
+# Redirect rules for React Router (SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
